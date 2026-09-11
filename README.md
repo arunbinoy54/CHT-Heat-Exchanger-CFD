@@ -67,6 +67,9 @@ Default automatic convergence monitors were disabled to force the solver to achi
 | Average Local Heat Transfer Coefficient (h) | 11.35 | W/(m²·K) |
 | Pressure Drop (Hot / Cold Lines) | 291.05 / 288.09 | Pa |
 
+**Static Pressure Contour** 
+<img src="https://github.com/user-attachments/assets/a5012dec-7443-44b5-83ab-f9be1486fa81"  width="100%" />
+
 **Velocity Contour**  
 <img src="https://github.com/user-attachments/assets/a7996b5c-c092-46c1-9a29-e49c445e53c1" width="100%" />
 
@@ -82,7 +85,7 @@ Default automatic convergence monitors were disabled to force the solver to achi
 **Average HTC**  
 <img src="https://github.com/user-attachments/assets/27cef3ad-c16a-4a6c-9578-24a3b3ad14cc" width="100%" />
 
-## IIV.3. Analytical Validation (LMTD Method)
+## IV.3. Analytical Validation (LMTD Method)
 
 To mathematically validate the CFD results, analytical hand calculations were performed using the simulation geometry ($L = 1.0\text{ m}$, inner diameter $D = 0.035\text{ m}$) in a counter-flow arrangement.
 
@@ -96,3 +99,48 @@ The heat transfer surface area of the inner pipe is $A = \pi \cdot D \cdot L = 0
 $$U = Q / (A \cdot \Delta T_{LMTD}) = 3,135.97 / (0.1099 \cdot 44.02) = 648.25\text{ W}/(\text{m}^2\cdot\text{K})$$
 
 > **Discussion:** While the CFD-extracted wall coefficient (11.35 W/(m²·K)) represents the single-side convective film resistance, the analytical $U$ value encompasses the complete thermal circuit (inner film, outer film, and radial wall conduction). The low frictional pressure drops (~290 Pa) confirm efficient laminar/turbulent flow operation, validating the integrity of this 3D CHT design model.
+
+## V. Counter-Flow Analysis
+
+Following the parallel-flow baseline, the simulation configuration was inverted to establish a counter-flow regime. In this arrangement, the cold jacket fluid enters from the opposite physical end of the pipe, causing the two fluid streams to travel in opposite directions. 
+
+This setup serves to maximize the thermodynamic efficiency of the heat exchanger. Thermodynamically, counter flow maintains a more uniform temperature difference along the entire length of the 1-meter copper pipe, preventing the rapid decay seen in parallel flow and allowing the hot fluid to cool down further and the cold fluid to absorb more thermal energy.
+
+## V.1. Results & Convergence Validation
+
+Default automatic convergence monitors were disabled to force the solver to achieve true steady-state thermal equilibrium across 500 complete iterations under the counter-flow configuration.
+
+* **Residuals:** Scaled residuals demonstrated excellent asymptotic stabilization. Continuity dropped to near $10^{-10}$ and the energy residual achieved absolute convergence near $10^{-15}$.
+* **Conservation:** The domain achieved robust physical closure, yielding a net mass imbalance of $1.94 \times 10^{-15}$ kg/s and an absolute thermal energy imbalance of $1.67 \times 10^{-8}$ W across the entire system.
+<img width="1129" height="548" alt="Screenshot 2026-09-12 002755" src="https://github.com/user-attachments/assets/7fd6350c-623a-414c-9e81-8cbc55beec6b" />
+
+### V.2. Performance Metrics
+
+| Parameter | CFD Extracted Value | Unit |
+| :--- | :--- | :--- |
+| Hot Fluid Outlet Temp ($T_{h,out}$) | 340.32 | K |
+| Cold Fluid Outlet Temp ($T_{c,out}$) | 302.51 | K |
+| Net Heat Transfer Rate ($Q$) | 3,179.40 | W |
+| Average Nusselt Number | 22.39 | - |
+| Average Local HTC ($h$) | 13.44 | W/(m²·K) |
+| Pressure Drop (Hot / Cold) | 291.05 / 290.21 | Pa |
+
+**Static Pressure Contour** 
+
+<img src="https://github.com/user-attachments/assets/a5012dec-7443-44b5-83ab-f9be1486fa81"  width="100%" />
+
+**Velocity Contour**  
+<img src="https://github.com/user-attachments/assets/a7996b5c-c092-46c1-9a29-e49c445e53c1" width="100%" />
+
+**Temperature Contour**  
+<img src="https://github.com/user-attachments/assets/8b109481-7f51-4e9c-871b-235dbbe1192e" width="100%" />
+
+**Nusselt Number**  
+<img src="https://github.com/user-attachments/assets/7426eeab-0e93-4ed8-a9b4-bbdd6446efac" width="100%" />
+
+**Energy Balance**  
+<img src="https://github.com/user-attachments/assets/4a996cf6-3215-4ae2-a128-d958395b7254" width="100%" />
+
+**Average HTC**  
+<img src="https://github.com/user-attachments/assets/27cef3ad-c16a-4a6c-9578-24a3b3ad14cc" width="100%" />
+
