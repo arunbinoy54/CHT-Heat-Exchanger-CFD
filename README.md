@@ -33,7 +33,7 @@ The simulation was executed as a Steady-State analysis using a pressure-based co
 
 The SST k-omega turbulence model was selected because it seamlessly blends standard k-omega near the pipe walls (capitalizing on the dense inflation layers to capture steep thermal gradients) with standard k-epsilon in the free stream.
 
-### III.1 Inlets & Outlets
+### III.1. Inlets & Outlets
 
 * **Hot Fluid Inlet:** Velocity = 0.5 m/s, Static Temperature = 350 K.
 * **Cold Fluid Inlet:** Velocity = 0.5 m/s, Static Temperature = 300 K.
@@ -45,7 +45,7 @@ The initial phase of the simulation evaluates the heat exchanger in a parallel-f
 
 This setup serves as the baseline performance metric for the project. Thermodynamically, parallel flow generates the highest initial temperature gradient at the inlet boundary. As the fluids travel along the 1-meter copper pipe, this temperature difference exponentially decays as the two streams exchange heat and approach a shared equilibrium temperature.
 
-## IV.1 Results & Convergence Validation
+## IV.1. Results & Convergence Validation
 
 Default automatic convergence monitors were disabled to force the solver to achieve true steady-state thermal equilibrium across 500 complete iterations.
 
@@ -54,6 +54,25 @@ Default automatic convergence monitors were disabled to force the solver to achi
 
 <img width="1091" height="583" alt="Screenshot 2026-09-11 012748" src="https://github.com/user-attachments/assets/67f1549a-cc93-488b-b13f-d3144f9c8706" />
 
+### IV.2. Performance Metrics
+
+| Parameter | Value | Unit |
+| :--- | :--- | :--- |
+| Hot Fluid Inlet Energy Rate | 18,970.61 | W |
+| Hot Fluid Outlet Energy Rate | 15,834.64 | W |
+| Net Heat Transfer Rate (Q) | 3,135.97 | W |
+| Hot Fluid Outlet Temperature | 340.65 | K |
+| Cold Fluid Outlet Temperature | 302.40 | K |
+| Average Nusselt Number | 18.92 | - |
+| Average Local Heat Transfer Coefficient (h) | 11.35 | W/(m²·K) |
+| Pressure Drop (Hot / Cold Lines) | 291.05 / 288.09 | Pa |
+
+Static Pressure
+<img width="1430" height="568" alt="Screenshot 2026-09-11 014518" src="https://github.com/user-attachments/assets/63d9211b-d347-40cf-bb9c-289f5a8eea1c" />
+Velocity Contour
+<img width="1094" height="585" alt="Screenshot 2026-09-11 013613" src="https://github.com/user-attachments/assets/93616890-0a8d-4b06-87c3-5e452e91e641" />
+Temperature Contour
+<img width="1091" height="582" alt="Screenshot 2026-09-11 013554" src="https://github.com/user-attachments/assets/700cd867-a40a-456b-a1e0-227f177d5541" />
 
 
 
