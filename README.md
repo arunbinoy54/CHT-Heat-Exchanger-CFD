@@ -27,5 +27,33 @@ The domain was discretized using an unstructured poly-hexcore mesh, optimizing c
 <img width="1035" height="522" alt="Screenshot 2026-08-31 202011" src="https://github.com/user-attachments/assets/626647e6-f2ce-4521-b93a-1efcd318019b" />
 <img width="602" height="386" alt="Screenshot 2026-08-31 201028" src="https://github.com/user-attachments/assets/b35d088f-4c85-4d76-b326-fe77246ce45f" />
 
+## III. Simulation Setup & Boundary Conditions
+
+The simulation was executed as a Steady-State analysis using a pressure-based coupled solver. A Pseudo Time Method and Warped-Face Gradient Correction were activated to enhance stability and convergence speed. Spatial discretization for momentum, energy, and turbulence was set to Second Order Upwind to minimize numerical diffusion.
+
+The SST k-omega turbulence model was selected because it seamlessly blends standard k-omega near the pipe walls (capitalizing on the dense inflation layers to capture steep thermal gradients) with standard k-epsilon in the free stream.
+
+### III.1 Inlets & Outlets
+
+* **Hot Fluid Inlet:** Velocity = 0.5 m/s, Static Temperature = 350 K.
+* **Cold Fluid Inlet:** Velocity = 0.5 m/s, Static Temperature = 300 K.
+* **Outlets:** Gauge Pressure = 0 Pa. Backflow total temperatures were explicitly set to 350 K (hot side) and 300 K (cold side) to prevent artificial thermal shocks and divergence during early calculation instabilities.
+
+### IV. PARALLEL FLOW
+
+The initial phase of the simulation evaluates the heat exchanger in a parallel-flow configuration. In this arrangement, both the hot inner fluid and the cold jacket fluid enter the domain from the same physical end of the pipe and travel in the same direction. 
+
+This setup serves as the baseline performance metric for the project. Thermodynamically, parallel flow generates the highest initial temperature gradient at the inlet boundary. As the fluids travel along the 1-meter copper pipe, this temperature difference exponentially decays as the two streams exchange heat and approach a shared equilibrium temperature.
+
+## IV.1 Results & Convergence Validation
+
+Default automatic convergence monitors were disabled to force the solver to achieve true steady-state thermal equilibrium across 500 complete iterations.
+
+* **Residuals:** Scaled residuals demonstrated excellent asymptotic stabilization. Continuity dropped to near $10^{-9}$ and the energy residual achieved absolute convergence near $10^{-14}$.
+* **Conservation:** The domain is perfectly sealed, yielding a net mass imbalance of $1.03 \times 10^{-13}$ kg/s. Absolute energy conservation was verified by a net thermal energy imbalance of $-2.24 \times 10^{-7}$ W across the entire system.
+
+<img width="1126" height="626" alt="Screenshot 2026-09-11 012748" src="https://github.com/user-attachments/assets/07493d7b-a595-44ae-a1df-fb1ac3ed5c57" />
+
+
 
 
