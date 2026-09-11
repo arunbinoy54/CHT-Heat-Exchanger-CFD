@@ -161,7 +161,9 @@ $$U = Q / (A \cdot \Delta T_{LMTD}) = 3,179.40 / (0.1099 \cdot 43.81) = 660.39\t
 
 ## VI. Final Comparison: Parallel vs. Counter-Flow
 
-Comparing the two simulations isolates the thermodynamic advantage of the counter-flow orientation[cite: 1]. While the geometry, mesh (1.9M cells), turbulence model (SST k-omega), and fluid velocities remained identical, reversing the fluid path generated distinct performance enhancements[cite: 1].
+Comparing the two simulations isolates the thermodynamic advantage of the counter-flow orientation.
+
+While the geometry, mesh (1.9M cells), turbulence model (SST k-omega), and fluid velocities remained identical, reversing the fluid path generated distinct performance enhancements.
 
 | Metric | Parallel-Flow | Counter-Flow | Difference |
 | :--- | :--- | :--- | :--- |
@@ -171,5 +173,5 @@ Comparing the two simulations isolates the thermodynamic advantage of the counte
 | Cold Fluid Outlet | 302.40 K | 302.51 K | + 0.11 K (Warmer) |
 
 > **Engineering Discussion & Conclusion:**<br><br>
-> The counter-flow heat transfer (3,179.40 W) is only 43.43 W higher than the parallel flow (3,135.97 W)[cite: 1]. This small absolute difference is constrained by the geometry and boundary conditions: the pipe is only 1 meter long, and the water is moving very fast ($0.5\text{ m/s}$)[cite: 1]. This means the fluid only spends approximately 2 seconds inside the heat exchanger[cite: 1].<br><br>
-> The physical length is simply too short for the counter-flow temperature profiles to fully develop and pull away from the parallel-flow efficiency[cite: 1]. If this pipe were lengthened to 5 meters, or the flow slowed down to increase residence time, the counter-flow efficiency would drastically outpace the parallel setup[cite: 1]. Understanding the relationship between fluid residence time and thermal profile development is critical for scaling these principles up to industrial applications[cite: 1].
+> The counter-flow heat transfer (3,179.40 W) is only 43.43 W higher than the parallel flow (3,135.97 W). This small absolute difference is constrained by the geometry and boundary conditions: the pipe is only 1 meter long, and the water is moving very fast ($0.5\text{ m/s}$). This means the fluid only spends approximately 2 seconds inside the heat exchanger.<br><br>
+> The physical length is simply too short for the counter-flow temperature profiles to fully develop and pull away from the parallel-flow efficiency. If this pipe were lengthened to 5 meters, or the flow slowed down to increase residence time, the counter-flow efficiency would drastically outpace the parallel setup. Understanding the relationship between fluid residence time and thermal profile development is critical for scaling these principles up to industrial applications.
