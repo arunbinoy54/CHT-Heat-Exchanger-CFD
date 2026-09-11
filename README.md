@@ -95,4 +95,4 @@ The heat transfer surface area of the inner pipe is $A = \pi \cdot D \cdot L = 0
 
 $$U = Q / (A \cdot \Delta T_{LMTD}) = 3,135.97 / (0.1099 \cdot 44.02) = 648.25\text{ W}/(\text{m}^2\cdot\text{K})$$
 
-**Discussion:** While the CFD-extracted wall coefficient ($11.35\text{ W}/(\text{m}^2\cdot\text{K})$) represents the single-side convective film resistance, the analytical $U$ value encompasses the complete thermal circuit (inner film, outer film, and radial wall conduction). The low frictional pressure drops (~290 Pa) confirm efficient turbulent flow operation, validating the integrity of this 3D CHT design model.
+> **Discussion:** While the CFD-extracted wall coefficient (11.35 W/(m²·K)) represents the single-side convective film resistance, the analytical $U$ value encompasses the complete thermal circuit (inner film, outer film, and radial wall conduction). The low frictional pressure drops (~290 Pa) confirm efficient laminar/turbulent flow operation, validating the integrity of this 3D CHT design model.
