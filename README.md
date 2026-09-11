@@ -9,4 +9,4 @@ Key engineering highlights include:
 * **Thermodynamic Validation:** Direct verification of CFD solver outputs against fundamental analytical heat transfer equations, including Log Mean Temperature Difference (LMTD) and overall heat transfer coefficients ($U$).
 * **Performance Analysis:** A critical engineering assessment isolating the impact of flow orientation, fluid residence time, and pipe length constraints on total thermal energy extraction.
 
-Do you need help structuring the rest of the README file, like adding a "Skills Demonstrated" or "How to Run" section?
+
