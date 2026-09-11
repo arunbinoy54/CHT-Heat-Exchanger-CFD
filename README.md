@@ -148,7 +148,7 @@ Default automatic convergence monitors were disabled to force the solver to achi
 
 ### V.3. Analytical Validation (LMTD & Overall U)[cite: 1]
 
-To mathematically validate the final CFD results, the Log Mean Temperature Difference (LMTD) and Overall Heat Transfer Coefficient (U) were calculated based on the new counter-flow boundary data[cite: 1].
+To mathematically validate the final CFD results, the Log Mean Temperature Difference (LMTD) and Overall Heat Transfer Coefficient (U) were calculated based on the new counter-flow boundary data.
 
 $$\Delta T_1 = T_{h,in} - T_{c,out} = 350.00 - 302.51 = 47.49\text{ K}$$
 $$\Delta T_2 = T_{h,out} - T_{c,in} = 340.32 - 300.00 = 40.32\text{ K}$$
