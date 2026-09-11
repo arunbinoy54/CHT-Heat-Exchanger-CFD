@@ -150,14 +150,14 @@ Default automatic convergence monitors were disabled to force the solver to achi
 
 To mathematically validate the final CFD results, the Log Mean Temperature Difference (LMTD) and Overall Heat Transfer Coefficient (U) were calculated based on the new counter-flow boundary data[cite: 1].
 
-$$\Delta T_1 = T_{h,in} - T_{c,out} = 350.00 - 302.51 = 47.49\text{ K}$$[cite: 1]
-$$\Delta T_2 = T_{h,out} - T_{c,in} = 340.32 - 300.00 = 40.32\text{ K}$$[cite: 1]
+$$\Delta T_1 = T_{h,in} - T_{c,out} = 350.00 - 302.51 = 47.49\text{ K}$$
+$$\Delta T_2 = T_{h,out} - T_{c,in} = 340.32 - 300.00 = 40.32\text{ K}$$
 
-$$\Delta T_{LMTD} = (\Delta T_1 - \Delta T_2) / \ln(\Delta T_1 / \Delta T_2) = 43.81\text{ K}$$[cite: 1]
+$$\Delta T_{LMTD} = (\Delta T_1 - \Delta T_2) / \ln(\Delta T_1 / \Delta T_2) = 43.81\text{ K}$$
 
-Using the inner surface area ($A = 0.1099\text{ m}^2$) and the CFD-extracted heat transfer rate ($Q = 3,179.40\text{ W}$)[cite: 1]:
+Using the inner surface area ($A = 0.1099\text{ m}^2$) and the CFD-extracted heat transfer rate ($Q = 3,179.40\text{ W}$)
 
-$$U = Q / (A \cdot \Delta T_{LMTD}) = 3,179.40 / (0.1099 \cdot 43.81) = 660.39\text{ W}/(\text{m}^2\cdot\text{K})$$[cite: 1]
+$$U = Q / (A \cdot \Delta T_{LMTD}) = 3,179.40 / (0.1099 \cdot 43.81) = 660.39\text{ W}/(\text{m}^2\cdot\text{K})$$
 
 ## VI. Final Comparison: Parallel vs. Counter-Flow
 
