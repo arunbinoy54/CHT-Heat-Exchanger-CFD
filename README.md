@@ -52,7 +52,7 @@ Default automatic convergence monitors were disabled to force the solver to achi
 * **Residuals:** Scaled residuals demonstrated excellent asymptotic stabilization. Continuity dropped to near $10^{-9}$ and the energy residual achieved absolute convergence near $10^{-14}$.
 * **Conservation:** The domain is perfectly sealed, yielding a net mass imbalance of $1.03 \times 10^{-13}$ kg/s. Absolute energy conservation was verified by a net thermal energy imbalance of $-2.24 \times 10^{-7}$ W across the entire system.
 
-<img width="1126" height="626" alt="Screenshot 2026-09-11 012748" src="https://github.com/user-attachments/assets/07493d7b-a595-44ae-a1df-fb1ac3ed5c57" />
+<img width="1091" height="583" alt="Screenshot 2026-09-11 012748" src="https://github.com/user-attachments/assets/67f1549a-cc93-488b-b13f-d3144f9c8706" />
 
 
 
