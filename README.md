@@ -146,7 +146,7 @@ Default automatic convergence monitors were disabled to force the solver to achi
 **Average HTC**  
 <img src="https://github.com/user-attachments/assets/462f6579-5bfb-4181-81f9-c1030f0c4299" width="100%" />
 
-### V.3. Analytical Validation (LMTD & Overall U)[cite: 1]
+### V.3. Analytical Validation (LMTD & Overall U)
 
 To mathematically validate the final CFD results, the Log Mean Temperature Difference (LMTD) and Overall Heat Transfer Coefficient (U) were calculated based on the new counter-flow boundary data.
 
