@@ -1,4 +1,5 @@
 # CHT-Heat-Exchanger-CFD
+
 A 3D Conjugate Heat Transfer (CHT) simulation of a double-pipe heat exchanger using Ansys Fluent, featuring parallel vs. counter-flow analysis and LMTD analytical validation.
 
 This repository contains a comprehensive 3D Conjugate Heat Transfer (CHT) analysis of a concentric pipe-in-pipe heat exchanger. Built and simulated in Ansys Fluent utilizing a 1.9M cell conformal poly-hexcore mesh, the project evaluates the thermodynamic efficiency of parallel-flow versus counter-flow configurations.
@@ -24,8 +25,9 @@ The domain was discretized using an unstructured poly-hexcore mesh, optimizing c
 * **Fluid Domains (Inflation):** To resolve steep velocity and thermal gradients, 7 inflation layers were applied exclusively to the fluid regions.
 * **Solid Domain (Body Sizing):** A local body sizing target of 1 mm was applied to the 2 mm thick copper pipe to ensure 3 to 4 cells spanned its thickness, maximizing thermal conduction accuracy.
 * **Final Metrics:** The final grid contains 1,903,975 cells with a minimum Orthogonal Quality of 0.34.
-<img width="1035" height="522" alt="Screenshot 2026-08-31 202011" src="https://github.com/user-attachments/assets/626647e6-f2ce-4521-b93a-1efcd318019b" />
-<img width="602" height="386" alt="Screenshot 2026-08-31 201028" src="https://github.com/user-attachments/assets/b35d088f-4c85-4d76-b326-fe77246ce45f" />
+
+<img width="1035" height="522" alt="Mesh View 1" src="https://github.com/user-attachments/assets/626647e6-f2ce-4521-b93a-1efcd318019b" />
+<img width="602" height="386" alt="Mesh View 2" src="https://github.com/user-attachments/assets/b35d088f-4c85-4d76-b326-fe77246ce45f" />
 
 ## III. Simulation Setup & Boundary Conditions
 
@@ -39,20 +41,20 @@ The SST k-omega turbulence model was selected because it seamlessly blends stand
 * **Cold Fluid Inlet:** Velocity = 0.5 m/s, Static Temperature = 300 K.
 * **Outlets:** Gauge Pressure = 0 Pa. Backflow total temperatures were explicitly set to 350 K (hot side) and 300 K (cold side) to prevent artificial thermal shocks and divergence during early calculation instabilities.
 
-### IV. PARALLEL FLOW
+## IV. Parallel-Flow Analysis
 
 The initial phase of the simulation evaluates the heat exchanger in a parallel-flow configuration. In this arrangement, both the hot inner fluid and the cold jacket fluid enter the domain from the same physical end of the pipe and travel in the same direction. 
 
 This setup serves as the baseline performance metric for the project. Thermodynamically, parallel flow generates the highest initial temperature gradient at the inlet boundary. As the fluids travel along the 1-meter copper pipe, this temperature difference exponentially decays as the two streams exchange heat and approach a shared equilibrium temperature.
 
-## IV.1. Results & Convergence Validation
+### IV.1. Results & Convergence Validation
 
 Default automatic convergence monitors were disabled to force the solver to achieve true steady-state thermal equilibrium across 500 complete iterations.
 
 * **Residuals:** Scaled residuals demonstrated excellent asymptotic stabilization. Continuity dropped to near $10^{-9}$ and the energy residual achieved absolute convergence near $10^{-14}$.
 * **Conservation:** The domain is perfectly sealed, yielding a net mass imbalance of $1.03 \times 10^{-13}$ kg/s. Absolute energy conservation was verified by a net thermal energy imbalance of $-2.24 \times 10^{-7}$ W across the entire system.
 
-<img width="1091" height="583" alt="Screenshot 2026-09-11 012748" src="https://github.com/user-attachments/assets/67f1549a-cc93-488b-b13f-d3144f9c8706" />
+<img width="1091" height="583" alt="Parallel Residuals" src="https://github.com/user-attachments/assets/67f1549a-cc93-488b-b13f-d3144f9c8706" />
 
 ### IV.2. Performance Metrics
 
@@ -67,8 +69,8 @@ Default automatic convergence monitors were disabled to force the solver to achi
 | Average Local Heat Transfer Coefficient (h) | 11.35 | W/(m²·K) |
 | Pressure Drop (Hot / Cold Lines) | 291.05 / 288.09 | Pa |
 
-**Static Pressure Contour** 
-<img src="https://github.com/user-attachments/assets/a5012dec-7443-44b5-83ab-f9be1486fa81"  width="100%" />
+**Static Pressure Contour**  
+<img src="https://github.com/user-attachments/assets/a5012dec-7443-44b5-83ab-f9be1486fa81" width="100%" />
 
 **Velocity Contour**  
 <img src="https://github.com/user-attachments/assets/a7996b5c-c092-46c1-9a29-e49c445e53c1" width="100%" />
@@ -85,7 +87,7 @@ Default automatic convergence monitors were disabled to force the solver to achi
 **Average HTC**  
 <img src="https://github.com/user-attachments/assets/27cef3ad-c16a-4a6c-9578-24a3b3ad14cc" width="100%" />
 
-## IV.3. Analytical Validation (LMTD Method)
+### IV.3. Analytical Validation (LMTD Method)
 
 To mathematically validate the CFD results, analytical hand calculations were performed using the simulation geometry ($L = 1.0\text{ m}$, inner diameter $D = 0.035\text{ m}$) in a counter-flow arrangement.
 
@@ -106,13 +108,14 @@ Following the parallel-flow baseline, the simulation configuration was inverted 
 
 This setup serves to maximize the thermodynamic efficiency of the heat exchanger. Thermodynamically, counter flow maintains a more uniform temperature difference along the entire length of the 1-meter copper pipe, preventing the rapid decay seen in parallel flow and allowing the hot fluid to cool down further and the cold fluid to absorb more thermal energy.
 
-## V.1. Results & Convergence Validation
+### V.1. Results & Convergence Validation
 
 Default automatic convergence monitors were disabled to force the solver to achieve true steady-state thermal equilibrium across 500 complete iterations under the counter-flow configuration.
 
 * **Residuals:** Scaled residuals demonstrated excellent asymptotic stabilization. Continuity dropped to near $10^{-10}$ and the energy residual achieved absolute convergence near $10^{-15}$.
 * **Conservation:** The domain achieved robust physical closure, yielding a net mass imbalance of $1.94 \times 10^{-15}$ kg/s and an absolute thermal energy imbalance of $1.67 \times 10^{-8}$ W across the entire system.
-<img width="1129" height="548" alt="Screenshot 2026-09-12 002755" src="https://github.com/user-attachments/assets/7fd6350c-623a-414c-9e81-8cbc55beec6b" />
+
+<img width="1129" height="548" alt="Counter Residuals" src="https://github.com/user-attachments/assets/7fd6350c-623a-414c-9e81-8cbc55beec6b" />
 
 ### V.2. Performance Metrics
 
@@ -125,8 +128,8 @@ Default automatic convergence monitors were disabled to force the solver to achi
 | Average Local HTC ($h$) | 13.44 | W/(m²·K) |
 | Pressure Drop (Hot / Cold) | 291.05 / 290.21 | Pa |
 
-**Static Pressure Contour** 
-<img src="https://github.com/user-attachments/assets/143d026a-8040-4f85-bc7a-1837a24498ae"  width="100%" />
+**Static Pressure Contour**  
+<img src="https://github.com/user-attachments/assets/143d026a-8040-4f85-bc7a-1837a24498ae" width="100%" />
 
 **Velocity Contour**  
 <img src="https://github.com/user-attachments/assets/ebe87e99-77f7-45af-9b0e-b921bda26174" width="100%" />
@@ -143,7 +146,7 @@ Default automatic convergence monitors were disabled to force the solver to achi
 **Average HTC**  
 <img src="https://github.com/user-attachments/assets/462f6579-5bfb-4181-81f9-c1030f0c4299" width="100%" />
 
-## V.3. Analytical Validation (LMTD & Overall U)[cite: 1]
+### V.3. Analytical Validation (LMTD & Overall U)[cite: 1]
 
 To mathematically validate the final CFD results, the Log Mean Temperature Difference (LMTD) and Overall Heat Transfer Coefficient (U) were calculated based on the new counter-flow boundary data[cite: 1].
 
