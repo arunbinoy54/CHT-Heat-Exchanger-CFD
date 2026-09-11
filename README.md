@@ -126,21 +126,47 @@ Default automatic convergence monitors were disabled to force the solver to achi
 | Pressure Drop (Hot / Cold) | 291.05 / 290.21 | Pa |
 
 **Static Pressure Contour** 
-
-<img src="https://github.com/user-attachments/assets/a5012dec-7443-44b5-83ab-f9be1486fa81"  width="100%" />
+<img src="https://github.com/user-attachments/assets/143d026a-8040-4f85-bc7a-1837a24498ae"  width="100%" />
 
 **Velocity Contour**  
-<img src="https://github.com/user-attachments/assets/a7996b5c-c092-46c1-9a29-e49c445e53c1" width="100%" />
+<img src="https://github.com/user-attachments/assets/ebe87e99-77f7-45af-9b0e-b921bda26174" width="100%" />
 
 **Temperature Contour**  
-<img src="https://github.com/user-attachments/assets/8b109481-7f51-4e9c-871b-235dbbe1192e" width="100%" />
+<img src="https://github.com/user-attachments/assets/8d1d34ad-f6c7-43d4-bb7c-84c78fe946d6" width="100%" />
 
 **Nusselt Number**  
 <img src="https://github.com/user-attachments/assets/7426eeab-0e93-4ed8-a9b4-bbdd6446efac" width="100%" />
 
 **Energy Balance**  
-<img src="https://github.com/user-attachments/assets/4a996cf6-3215-4ae2-a128-d958395b7254" width="100%" />
+<img src="https://github.com/user-attachments/assets/00d00d95-2bdc-47f4-a667-c312131be448" width="100%" />
 
 **Average HTC**  
-<img src="https://github.com/user-attachments/assets/27cef3ad-c16a-4a6c-9578-24a3b3ad14cc" width="100%" />
+<img src="https://github.com/user-attachments/assets/462f6579-5bfb-4181-81f9-c1030f0c4299" width="100%" />
 
+## V.3. Analytical Validation (LMTD & Overall U)[cite: 1]
+
+To mathematically validate the final CFD results, the Log Mean Temperature Difference (LMTD) and Overall Heat Transfer Coefficient (U) were calculated based on the new counter-flow boundary data[cite: 1].
+
+$$\Delta T_1 = T_{h,in} - T_{c,out} = 350.00 - 302.51 = 47.49\text{ K}$$[cite: 1]
+$$\Delta T_2 = T_{h,out} - T_{c,in} = 340.32 - 300.00 = 40.32\text{ K}$$[cite: 1]
+
+$$\Delta T_{LMTD} = (\Delta T_1 - \Delta T_2) / \ln(\Delta T_1 / \Delta T_2) = 43.81\text{ K}$$[cite: 1]
+
+Using the inner surface area ($A = 0.1099\text{ m}^2$) and the CFD-extracted heat transfer rate ($Q = 3,179.40\text{ W}$)[cite: 1]:
+
+$$U = Q / (A \cdot \Delta T_{LMTD}) = 3,179.40 / (0.1099 \cdot 43.81) = 660.39\text{ W}/(\text{m}^2\cdot\text{K})$$[cite: 1]
+
+## VI. Final Comparison: Parallel vs. Counter-Flow
+
+Comparing the two simulations isolates the thermodynamic advantage of the counter-flow orientation[cite: 1]. While the geometry, mesh (1.9M cells), turbulence model (SST k-omega), and fluid velocities remained identical, reversing the fluid path generated distinct performance enhancements[cite: 1].
+
+| Metric | Parallel-Flow | Counter-Flow | Difference |
+| :--- | :--- | :--- | :--- |
+| Total Heat Transfer ($Q$) | 3,135.97 W | 3,179.40 W | + 43.43 W |
+| Overall HTC ($U$) | 648.25 W/(m²·K) | 660.39 W/(m²·K) | + 12.14 W/(m²·K) |
+| Hot Fluid Outlet | 340.65 K | 340.32 K | - 0.33 K (Cooler) |
+| Cold Fluid Outlet | 302.40 K | 302.51 K | + 0.11 K (Warmer) |
+
+> **Engineering Discussion & Conclusion:**<br><br>
+> The counter-flow heat transfer (3,179.40 W) is only 43.43 W higher than the parallel flow (3,135.97 W)[cite: 1]. This small absolute difference is constrained by the geometry and boundary conditions: the pipe is only 1 meter long, and the water is moving very fast ($0.5\text{ m/s}$)[cite: 1]. This means the fluid only spends approximately 2 seconds inside the heat exchanger[cite: 1].<br><br>
+> The physical length is simply too short for the counter-flow temperature profiles to fully develop and pull away from the parallel-flow efficiency[cite: 1]. If this pipe were lengthened to 5 meters, or the flow slowed down to increase residence time, the counter-flow efficiency would drastically outpace the parallel setup[cite: 1]. Understanding the relationship between fluid residence time and thermal profile development is critical for scaling these principles up to industrial applications[cite: 1].
