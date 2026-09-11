@@ -85,5 +85,24 @@ Temperature Contour
 <img width="1436" height="557" alt="Screenshot 2026-09-11 014634" src="https://github.com/user-attachments/assets/8b109481-7f51-4e9c-871b-235dbbe1192e" />
 
 
+nusselt no 
+<img width="1087" height="573" alt="Screenshot 2026-09-11 012829" src="https://github.com/user-attachments/assets/a10cbd9d-acac-4bde-b231-cfd088ba0010" />
 
+energy balance
+<img width="1088" height="586" alt="Screenshot 2026-09-11 012900" src="https://github.com/user-attachments/assets/4a996cf6-3215-4ae2-a128-d958395b7254" />
 
+abg htc
+<img width="1088" height="583" alt="Screenshot 2026-09-11 012926" src="https://github.com/user-attachments/assets/27cef3ad-c16a-4a6c-9578-24a3b3ad14cc" />
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/63d9211b-d347-40cf-bb9c-289f5a8eea1c" width="48%" />
+  <img src="https://github.com/user-attachments/assets/a7996b5c-c092-46c1-9a29-e49c445e53c1" width="48%" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8b109481-7f51-4e9c-871b-235dbbe1192e" width="48%" />
+  <img src="https://github.com/user-attachments/assets/a10cbd9d-acac-4bde-b231-cfd088ba0010" width="48%" />
+</p>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4a996cf6-3215-4ae2-a128-d958395b7254" width="48%" />
+  <img src="https://github.com/user-attachments/assets/27cef3ad-c16a-4a6c-9578-24a3b3ad14cc" width="48%" />
+</p>
