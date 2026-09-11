@@ -25,9 +25,7 @@ The domain was discretized using an unstructured poly-hexcore mesh, optimizing c
 * **Solid Domain (Body Sizing):** A local body sizing target of 1 mm was applied to the 2 mm thick copper pipe to ensure 3 to 4 cells spanned its thickness, maximizing thermal conduction accuracy.
 * **Final Metrics:** The final grid contains 1,903,975 cells with a minimum Orthogonal Quality of 0.34.
 <img width="1035" height="522" alt="Screenshot 2026-08-31 202011" src="https://github.com/user-attachments/assets/626647e6-f2ce-4521-b93a-1efcd318019b" />
-<img width="602" height="386" alt="Screenshot 2026-08-31 201028" src="https://github.com/user-attachments/assets/aa97b98c-1278-4c72-8d29-6f3475eed395" />
-
 <img width="602" height="386" alt="Screenshot 2026-08-31 201028" src="https://github.com/user-attachments/assets/b35d088f-4c85-4d76-b326-fe77246ce45f" />
-<img width="1035" height="522" alt="Screenshot 2026-08-31 202011" src="https://github.com/user-attachments/assets/6602edea-7cfa-4dd3-a778-0cb57a0c97cd" />
+
 
 
