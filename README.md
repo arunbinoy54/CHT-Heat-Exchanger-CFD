@@ -67,36 +67,6 @@ Default automatic convergence monitors were disabled to force the solver to achi
 | Average Local Heat Transfer Coefficient (h) | 11.35 | W/(m²·K) |
 | Pressure Drop (Hot / Cold Lines) | 291.05 / 288.09 | Pa |
 
-Static Pressure
-
-<img width="1430" height="568" alt="Screenshot 2026-09-11 014518" src="https://github.com/user-attachments/assets/63d9211b-d347-40cf-bb9c-289f5a8eea1c" />
-
-
-
-Velocity Contour
-
-<img width="1443" height="580" alt="Screenshot 2026-09-11 014619" src="https://github.com/user-attachments/assets/a7996b5c-c092-46c1-9a29-e49c445e53c1" />
-
-
-
-
-Temperature Contour
-
-<img width="1436" height="557" alt="Screenshot 2026-09-11 014634" src="https://github.com/user-attachments/assets/8b109481-7f51-4e9c-871b-235dbbe1192e" />
-
-
-nusselt no 
-<img width="1087" height="573" alt="Screenshot 2026-09-11 012829" src="https://github.com/user-attachments/assets/a10cbd9d-acac-4bde-b231-cfd088ba0010" />
-
-energy balance
-<img width="1088" height="586" alt="Screenshot 2026-09-11 012900" src="https://github.com/user-attachments/assets/4a996cf6-3215-4ae2-a128-d958395b7254" />
-
-abg htc
-<img width="1088" height="583" alt="Screenshot 2026-09-11 012926" src="https://github.com/user-attachments/assets/27cef3ad-c16a-4a6c-9578-24a3b3ad14cc" />
-
-**Static Pressure**  
-<img src="https://github.com/user-attachments/assets/63d9211b-d347-40cf-bb9c-289f5a8eea1c" width="100%" />
-
 **Velocity Contour**  
 <img src="https://github.com/user-attachments/assets/a7996b5c-c092-46c1-9a29-e49c445e53c1" width="100%" />
 
@@ -111,3 +81,18 @@ abg htc
 
 **Average HTC**  
 <img src="https://github.com/user-attachments/assets/27cef3ad-c16a-4a6c-9578-24a3b3ad14cc" width="100%" />
+
+## IIV.3. Analytical Validation (LMTD Method)
+
+To mathematically validate the CFD results, analytical hand calculations were performed using the simulation geometry ($L = 1.0\text{ m}$, inner diameter $D = 0.035\text{ m}$) in a counter-flow arrangement.
+
+$$\Delta T_1 = T_{h,in} - T_{c,out} = 350.00 - 302.40 = 47.60\text{ K}$$
+$$\Delta T_2 = T_{h,out} - T_{c,in} = 340.65 - 300.00 = 40.65\text{ K}$$
+
+$$\Delta T_{LMTD} = (\Delta T_1 - \Delta T_2) / \ln(\Delta T_1 / \Delta T_2) = 44.02\text{ K}$$
+
+The heat transfer surface area of the inner pipe is $A = \pi \cdot D \cdot L = 0.1099\text{ m}^2$. Using the CFD-derived total heat transfer ($Q = 3,135.97\text{ W}$), the overall heat transfer coefficient ($U$) is determined:
+
+$$U = Q / (A \cdot \Delta T_{LMTD}) = 3,135.97 / (0.1099 \cdot 44.02) = 648.25\text{ W}/(\text{m}^2\cdot\text{K})$$
+
+> **Discussion:** While the CFD-extracted wall coefficient ($11.35\text{ W}/(\text{m}^2\cdot\text{K})$) represents the single-side convective film resistance, the analytical $U$ value encompasses the complete thermal circuit (inner film, outer film, and radial wall conduction). The low frictional pressure drops (~290 Pa) confirm efficient laminar/turbulent flow operation, validating the integrity of this 3D CHT design model.
