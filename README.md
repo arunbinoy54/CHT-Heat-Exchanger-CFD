@@ -69,8 +69,10 @@ Default automatic convergence monitors were disabled to force the solver to achi
 
 Static Pressure
 <img width="1430" height="568" alt="Screenshot 2026-09-11 014518" src="https://github.com/user-attachments/assets/63d9211b-d347-40cf-bb9c-289f5a8eea1c" />
+
 Velocity Contour
 <img width="1443" height="580" alt="Screenshot 2026-09-11 014619" src="https://github.com/user-attachments/assets/a7996b5c-c092-46c1-9a29-e49c445e53c1" />
+
 Temperature Contour
 <img width="1436" height="557" alt="Screenshot 2026-09-11 014634" src="https://github.com/user-attachments/assets/8b109481-7f51-4e9c-871b-235dbbe1192e" />
 
